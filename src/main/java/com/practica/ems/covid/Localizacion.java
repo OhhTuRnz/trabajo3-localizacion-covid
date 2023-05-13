@@ -97,28 +97,15 @@ public class Localizacion {
 		
 		return cadena;		
 	}
-	
-	@SuppressWarnings("unused")
-	private FechaHora parsearFecha (String fecha) {
-		int dia, mes, anio;
+
+	private FechaHora parsearFecha (String fecha, String hora) {
 		String[] valores = fecha.split("\\/");
-		dia = Integer.parseInt(valores[0]);
-		mes = Integer.parseInt(valores[1]);
-		anio = Integer.parseInt(valores[2]);
-		FechaHora fechaHora = new FechaHora(dia, mes, anio, 0, 0);
-		return fechaHora;
-	}
-	
-	private  FechaHora parsearFecha (String fecha, String hora) {
-		int dia, mes, anio;
-		String[] valores = fecha.split("\\/");
-		dia = Integer.parseInt(valores[0]);
-		mes = Integer.parseInt(valores[1]);
-		anio = Integer.parseInt(valores[2]);
-		int minuto, segundo;
+		int dia = Integer.parseInt(valores[0]);
+		int mes = Integer.parseInt(valores[1]);
+		int anio = Integer.parseInt(valores[2]);
 		valores = hora.split("\\:");
-		minuto = Integer.parseInt(valores[0]);
-		segundo = Integer.parseInt(valores[1]);
+		int minuto = Integer.parseInt(valores[0]);
+		int segundo = Integer.parseInt(valores[1]);
 		FechaHora fechaHora = new FechaHora(dia, mes, anio, minuto, segundo);
 		return fechaHora;
 	}
