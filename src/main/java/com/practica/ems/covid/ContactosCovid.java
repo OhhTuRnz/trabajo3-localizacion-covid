@@ -36,10 +36,6 @@ public class ContactosCovid {
 		return poblacion;
 	}
 
-	public void setPoblacion(Poblacion poblacion) {
-		this.poblacion = poblacion;
-	}
-
 	public Localizacion getLocalizacion() {
 		return localizacion;
 	}
@@ -62,9 +58,7 @@ public class ContactosCovid {
 			EmsDuplicatePersonException, EmsDuplicateLocationException {
 		// borro información anterior
 		if (reset) {
-			this.poblacion = new Poblacion();
-			this.localizacion = new Localizacion();
-			this.listaContactos = new ListaContactos();
+			new ContactosCovid();
 		}
 		String datas[] = dividirEntrada(data);
 		for (String linea : datas) {
@@ -107,9 +101,7 @@ public class ContactosCovid {
 			fr = new FileReader(archivo);
 			br = new BufferedReader(fr);
 			if (reset) {
-				this.poblacion = new Poblacion();
-				this.localizacion = new Localizacion();
-				this.listaContactos = new ListaContactos();
+				new ContactosCovid();
 			} 
 			/**
 			 * Lectura del fichero	línea a línea. Compruebo que cada línea 
