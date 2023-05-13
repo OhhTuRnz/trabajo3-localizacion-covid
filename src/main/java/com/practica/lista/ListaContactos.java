@@ -110,7 +110,6 @@ public class ListaContactos {
 			return 0;
 		NodoTemporal aux = lista;
 		int cont = 0;
-		int a;
 		cont = 0;
 		while(aux!=null) {
 			if(aux.getFecha().compareTo(inicio)>=0 && aux.getFecha().compareTo(fin)<=0) {
@@ -139,8 +138,7 @@ public class ListaContactos {
 	@Override
 	public String toString() {
 		String cadena="";
-		int a,cont;
-		cont=0;
+		int cont;
 		NodoTemporal aux = lista;
 		for(cont=1; cont<size; cont++) {
 			cadena += aux.getFecha().getFecha().toString();
