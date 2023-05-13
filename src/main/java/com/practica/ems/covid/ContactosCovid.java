@@ -214,12 +214,16 @@ public class ContactosCovid {
 	}
 
 	private String[] dividirEntrada(String input) {
-		String cadenas[] = input.split("\\n");
-		return cadenas;
+		return dividir(input, "\\n");
 	}
 
 	private String[] dividirLineaData(String data) {
-		String cadenas[] = data.split("\\;");
+		return dividir(data, "\\;");
+	}
+
+	private String[] dividir(String data, String separador)
+	{
+		String cadenas[] = data.split(separador);
 		return cadenas;
 	}
 
